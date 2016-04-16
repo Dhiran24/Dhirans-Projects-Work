@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+         <link rel="stylesheet" type="text/css" href="./css/index.css" />
+				<style>
+table,th,td
+{
+border:1px  #818181;
+}
+</style>
+        <title>Personal Information</title>
+    </head>
+    <body>
+	
+	<div id="menu">
+           <div id="header-text"><p>QR Project</p></div>
+			</div>	
+	<h1> Personal Information</h1>
+	</div>	<div id="makeorders-container">
+		<table style="width:100%; color:#818181;">
+	<tr>
+  <td><p>Full Name</p></td>
+  <td><br><input class="text" type="text" maxlength="25" id="fullname" placeholder="Full Name"/></td>
+  </tr>
+
+	<tr>
+  <td><p>Surname</p></td>
+  <td><br><input class="text" type="text" maxlength="25" id="surname" placeholder="Surname"/></td>
+  </tr>
+  
+  <tr>
+  <td> <p>Cell Number</p> </td>
+  <td> <br><input class="text"  type="text" maxlength="10" id="cellnumber" onkeypress="return IsNumeric(event);" placeholder="Cell Number"/></td>
+  </tr>
+  
+    <tr>
+  <td> <p>Short explanation why you scanned the specific image</p></td>
+  <td> <br><input class="text"  type="text"  id="Short explanation why you scanned the image"  placeholder="Short explanation why you scanned the specific image"/></td>
+  </tr>
+  
+  </table>
+	<input class="button2"  type="button" onClick="updateCustomer();" value="Save Changes">
+</div>
+ <script type="text/javascript" src="./js/jquery-2.1.js"></script>
+
+<script type="text/javascript" src="./js/index.js"></script>
+
+	
+	</script>
+
+    </body>
+</html>
+
+

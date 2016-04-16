@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--?php
+$username="mpumel1";$password="GCxzd9EYdMbaDVp ";$database="mpumel1_qrcode";
+mysql_connect(mpumel1@localhost,$mpumel1,$GCxzd9EYdMbaDVp);
+@mysql_select_db($mpumel1_qrcode) or die( "Unable to select database");
+mysql_close();
+
+$query = "INSERT INTO PersonalInfo VALUES ('','$field1-name','$field2-name'
+,'$field3-name','$field4-name','$field5-name')";
+
+?-->
+</body>
+</html>
