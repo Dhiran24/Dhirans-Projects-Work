@@ -1,0 +1,8 @@
+CREATE TABLE PersonalInfo (Surname VARCHAR(15)PRIMARY KEY NOT NULL,
+name	VARCHAR (30),
+cell VARCHAR (10),	
+shortexplanationwhyyouscannedthatimage	VARCHAR(130),
+qrscanned VARCHAR(30));
+
+CREATE TABLE qrscanner (barcodeone VARCHAR(10),
+barcodetwo VARCHAR(10));
