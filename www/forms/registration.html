@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+				<style>
+table,th,td
+{
+border:1px  #818181;;
+}
+</style>
+        <title>Registration</title>
+    </head>
+    <body>
+ <div id="menu">
+            <div id="left" onClick="gologin();"></div>
+            <div id="header-text"><p>Casoojee's Cash Bazaar</p></div>
+			</div>	
+	
+	
+	<h1> Register Profile </h1> 
+	</div>
+		<div id="makeorders-container">
+	 		<div id="spinner">	
+    <form class="my-form" id="myform">
+
+		<table style="width:100%; color:#818181;">
+		<tr>
+		  <td id="hide"><input class="text"  type="text" maxlength="10" id="error" placeholder="Cell Number"/></td>
+  <td> <p>Username</p></td>
+  <td><br><input class="text"  type="text" maxlength="25" id="username" /></td>
+  </tr>
+  
+	<tr>
+  <td> <p>Full Name</p></td>
+  <td><br><input class="text"  type="text" maxlength="25" id="fullname"  placeholder="Full Name"/></td>
+  </tr>
+
+	<tr>
+  <td>  <p>Surname</p></td>
+  <td><br><input class="text"  type="text" maxlength="25" id="surname" placeholder="Surname"/></td>
+  </tr>
+  
+	<tr>
+  <td> <p>Password</p></td>
+  <td> <br><input class="text"  type="password" id="passwords" onChange="password()"placeholder="Password" name="pwd"/> <br>
+  <input  class="text" type="password" id="passwords1" onChange="passwordvalidate()" placeholder="Password" name="pwd"/></td>
+  </tr>
+  
+	<tr>
+  <td>  <p>Wholesale, Retail or Both</p></td>
+  <td><br><select id="wholesaleRetailboth" class="select">
+    <option value="1" id="wholesaleRetailboth">Wholesale</option>
+    <option value="2" id="wholesaleRetailboth">Retail</option>
+	<option value="3" id="wholesaleRetailboth">Both</option>
+	</select> </td>
+  </tr>	  
+    <tr>
+  <td> <p>Land Line</p></td>
+  <td> <br><input class="text"  type="text" maxlength="10" id="landline" onkeypress="return IsNumeric(event);" placeholder="Land Line"/></td>
+  </tr>
+  
+    <tr>
+  <td> <p>Cell Number</p> </td>
+  <td> <br><input class="text"  type="text" maxlength="10" id="cellnumber" onkeypress="return IsNumeric(event);" placeholder="Cell Number"/></td>
+
+  </tr>
+  
+    <tr>
+  <td> <p>Address</p></td>
+  <td> <br><input class="text"  type="text"  id="address" onChange="getlongandlatfromaddress()" placeholder="Address"/></td>
+  </tr>
+  
+    <tr>
+  <td><p>Email</p> </td>
+  <td> <br><input class="text"  type="text" id="email" onChange="validateRegis()" placeholder="Email"/></td>
+  </tr>
+    
+    <tr>
+  <td id="gps"><p>GPS Cordinates Latitude</p> </td>
+  <td id="gps1"> <br><input class="text"  type="text" id="gpscordinateslatitude" placeholder="GPS Cordinates Latitude"/></td>
+  </tr>
+    
+    <tr>
+  <td id="gps2"> <p>GPS Cordinates Longitude</p></td>
+  <td id="gps3"> <br><input class="text"  type="text" id="gpscordinateslongitude" placeholder="GPS Cordinates Longitude"/></td>
+  </tr>
+  </table>
+	<input class="button2"type="button" class="button" onClick=" registercustomer(); " value="Save Changes">
+</form>
+	</div>
+	</div>
+ <script type="text/javascript" src="./js/jquery-2.1.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/spinner.js"></script> 
+<script type="text/javascript" src="./js/leaflet.js"></script>
+<script type="text/javascript" src="./js/ajax.js"></script>
+<script type="text/javascript" src="./js/crypto.js"></script> 
+<script type="text/javascript" src="./js/base64.js"></script>
+<script type="text/javascript" src="./js/rsa.js"></script>
+<script type="text/javascript" src="./js/jsbn.js"></script>
+<script type="text/javascript" src="./js/prng4.js"></script> 
+<script type="text/javascript" src="./js/rng.js"></script>
+	<script type="text/javascript">
+	document.addEventListener("deviceready", function(){
+	getuname();
+	 $('#passwords1').hide();
+	 $('#gps').hide();
+	 $('#gps1').hide();
+	  $('#gps2').hide();
+	 $('#gps3').hide();
+	 $('#hide').hide();
+	 
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+			});
+	</script>
+
+    </body>
+</html>
+
+

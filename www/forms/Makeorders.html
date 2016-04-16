@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />-->
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<style>
+table,th,td
+{
+border:1px  #818181;;
+}
+</style>
+        <title>Place Orders</title>
+    </head>
+	 <div id="menu">
+            <div id="left" onClick="gohome();"></div>
+            <div id="header-text"><p>Casoojee's Cash Bazaar</p></div>
+			</div>	
+	 <div id="issue-container">
+     <h1>Place Orders</h1>
+   
+   	<div id="makeorders-container">
+   <table style="width:100%; color:#818181;">
+  <tr>
+    <td ><p>Order Id : </p></td>
+    <td ><br><input class="textbox" type="text" id="orderid" placeholder="Order ID"/></td>		
+  </tr>
+  <tr>
+    <td ><p>Loyalty Points : </p></td>
+    <td ><br><input class="textbox" type="text" id="loyalty" placeholder="Loyalty Points "/></td>		
+  </tr>
+  <tr id="ordertype2">
+    <td id="ordertype2"><p id="ordertype1">Order Type : </p></td>
+    <td id="ordertype2"><br><select class="select"  id="ordertype">
+	<option value="Retail" id="ordertype" >Retail</option>
+	<option value="Wholesale" id="ordertype">Wholesale</option>
+	</select></td>		
+  </tr>
+   
+   <tr id="hideitems">
+  <td id="hideitems"><p>Full Name : </p></td>
+  <td id="hideitems"><br><input class="textbox"  type="text" id="fullname" placeholder="Full Name"/> </td>
+  </tr>
+  
+     <tr id="hideitems1">
+  <td id="hideitems1"> <p>Address : </p></td>
+  <td id="hideitems1"><br><input class="textbox"  type="text" id="address" placeholder="Address"/> </td>
+  </tr>
+  
+  
+     <tr id="hideitems2">
+  <td id="hideitems2"> <p>Cell Number : </p></td>
+  <td id="hideitems2"><br> <input class="textbox"  type="text" id="cellnum" placeholder="Cell Number"/> </td>
+  </tr>
+  
+  
+     <tr>
+  <td><p>Product Type : </p> </td>
+  <td><br><select class="select"  id="producttype">
+	  <option value="Coal" id="producttype">Coal</option>
+	  <option value="Anthracite"id="producttype">Anthracite</option>
+	  </select>
+	  <select class="select"  id="producttype1">
+	  <option value="Coal" id="producttype1">Coal</option>
+	  <option value="Anthracite" id="producttype1">Anthracite</option>
+	  </select></td>
+  </tr>
+  
+     <tr>
+  <td id ="productgrade1"><p id ="productgrade1">Product Grade </p> </td>
+  <td id ="productgrade2"><br><select class="select"  id="productgrade">
+			<option value="A Grade" id="productgrade">A Grade</option>
+			<option value="B Grade" id="productgrade">B Grade</option>
+			<option value="C Grade" id="productgrade">C Grade</option>
+			</select></td>
+  </tr>
+  
+     <tr>
+  <td><p>Quantity :</p> </td>
+  <td><br><select class="select"  id="quantity">
+		<option value="70 KG" id="quantity">70 KG</option>
+		<option value="65 KG" id="quantity">65 KG</option>
+		<option value="40 KG" id="quantity">40 KG</option>
+		<option value="20 KG" id="quantity">20 KG</option>
+		</select>
+		<select class="select"  id="quantity1">
+		<option value="70 KG" id="quantity1">70 KG</option>
+		<option value="50 KG" id="quantity1">50 KG</option>
+		<option value="40 KG" id="quantity1">40 KG</option>
+		</select>
+		<select class="select"  id="quantity2">
+		<option value="1 Ton" id="quantity2">1 Ton</option>
+		</select> </td>
+  </tr>
+  
+     <tr>
+  <td><p>Bag Per Quantity : </p> </td>
+  <td><br><input class="textbox"  type="text" id="BagQuantity" onchange="calculatetotal()" placeholder="Bag Per Quantity"/></td>
+  </tr>
+  
+     <tr>
+  <td> <p>Total Price :  </p></td>
+  <td><br><input class="textbox"  type="text" id="TotalPrice" placeholder="TotalPrice"/> </td>
+  </tr>
+    <tr>
+  <td><input class="button"  type="button" onClick="Clearcart()" value="Clear Cart"> </td>
+  <td><input class="button"  type="button" onClick="addtocart()" value="Add to Cart"> </td>
+  </tr>
+  
+  <tr>
+  <td><p>Cart </p> </td>
+  <td> <textarea class="textbox1" name="comments" cols="25" rows="8" id="cart" placeholder="Cart"></textarea></td>
+  </tr>
+  
+     <tr>
+  <td><p>Use Loyalty Points : </p> </td>
+  <td><br> <input type="checkbox" name="loyalty1" id="loyalty1"value="Yes">Yes<br>
+<input type="checkbox" name="loyalty2" id="loyalty2"value="No">No 
+  </tr>
+  
+     <tr>
+  <td><p>Order Date : </p> </td>
+  <td><br><input class="textbox"  type="text" id="orderdate" placeholder="orderdate"/> </td>
+  </tr>
+  
+     <tr id="delv">
+  <td id="delv"><p>Deliver by Date : </p> </td>
+  <td id="delv"><br><input class="textbox"  type="text" id="deliverbydate" placeholder="deliver by date"/> </td>
+  </tr>
+</table>
+<center> 
+  <input class="button"  type="button" onClick="InsertOrder(); confirmcart(); spinner(); updatecoalstock();" value="Make Order"> 
+  </center>
+</div>
+ </div>
+ <script type="text/javascript" src="./js/jquery-2.1.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/spinner.js"></script> 
+<script type="text/javascript" src="./js/leaflet.js"></script>
+<script type="text/javascript" src="./js/ajax.js"></script>
+<script type="text/javascript" src="./js/crypto.js"></script> 
+<script type="text/javascript" src="./js/base64.js"></script>
+<script type="text/javascript" src="./js/rsa.js"></script>
+<script type="text/javascript" src="./js/jsbn.js"></script>
+<script type="text/javascript" src="./js/prng4.js"></script> 
+<script type="text/javascript" src="./js/rng.js"></script>
+	<script type="text/javascript">
+	
+			document.addEventListener("deviceready", function(){
+			spinner();
+			currentdate();
+			bindingorderdetails();
+			<!-- order type if both wholesaler or retailer-->
+			 $('#ordertype').hide();
+			 $('#ordertype1').hide();
+			 $('#ordertype2').hide();
+			 $('#hideitems').hide();
+			 $('#hideitems1').hide();
+			 $('#hideitems2').hide();
+			 $('#delv').hide();
+			 <!-- grade for wholesaler -->
+			  $('#productgrade2').hide();
+			 $('#productgrade1').hide();
+			 <!-- quantity for different products coal Anthracite or wholesale-->
+			 $('#quantity1').show();
+			 $('#quantity2').hide();
+			 $('#quantity').hide();
+			 $('#producttype1').hide();
+			 $('#producttype').show();
+			});
+			
+			<!-- for loading -->
+			$(document).ready(function() {     
+			$('#ordertype').change(function(){     
+				if($('#ordertype').val() === 'Wholesale')     
+					{	$('#productgrade').show();  
+						$('#productgrade1').show();   
+						$('#productgrade2').show();  
+						$('#quantity2').show();
+						$('#producttype1').show();
+						$('#producttype').hide();
+						$('#quantity').hide();
+						$('#quantity1').hide(); 
+						$('#producttype').hide();
+					}
+					else if($('#ordertype').val() === 'Retail')     
+					{	$('#productgrade').hide();  
+						$('#productgrade1').hide(); 
+						$('#productgrade2').hide();  						
+						$('#quantity2').hide();
+						$('#producttype1').hide();
+						$('#producttype').show();
+						$('#quantity').show();
+						$('#quantity1').hide(); 
+						
+					}
+				else if($('#producttype1').val() === 'Coal')
+					{
+					$('#producttype1').show(); 
+					$('#quantity1').show(); 
+					$('#productgrade1').hide();
+					$('#productgrade').hide(); 
+					$('#productgrade2').hide(); 
+					$('#quantity').hide(); 
+					$('#quantity2').hide();
+					$('#producttype').hide();
+					}  
+						else if($('#producttype1').val() === 'Anthracite')
+						{
+						$('#producttype1').show(); 
+						$('#quantity').show(); 
+						$('#productgrade1').hide();
+						$('#productgrade').hide();
+						$('#productgrade2').hide(); 						
+						$('#quantity1').hide(); 
+						$('#quantity2').hide(); 
+						$('#producttype').hide();
+						}
+					});  
+					});
+					
+					$(document).ready(function() {
+							
+						  $('#producttype').change(function(){
+							if($('#producttype').val() === 'Anthracite')     
+								{ 
+									$('#quantity').show();
+									$('#quantity1').hide();
+									$('#quantity2').hide();
+									
+								}
+							else if ($('#producttype').val() === 'Coal')  
+								{
+								$('#quantity1').show();
+								$('#quantity').hide();
+								$('#quantity2').hide();
+								
+								}
+  
+							});
+							});     
+	</script>
+    </body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maps</title>
+    <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+     <link rel="stylesheet" type="text/css" href="./css/maps.css" />
+	 <link rel="stylesheet" type="text/css" href="../css/index.css" />
+</head>
+<body>
+<header>
+			<div id="menu">
+            <div id="left" onClick="gohome();"></div>
+            <div id="header-text"><p>Casoojee's Cash Bazaar</p></div>
+			
+</header>
+<br><br><br><br>
+ 	<div id="view-container">
+	<div id="map" style="width:60%; height: 400px"></div>
+  	<script type="text/javascript" src="./js/leaflet.js"></script>
+
+    <script>
+	document.addEventListener("deviceready", function(){
+			spinner();
+			Maps();
+			driverlocation();
+			});
+	
+	
+		
+    </script>
+	</div>
+     <script type="text/javascript" src="./js/jquery-2.1.js"></script>
+    <script type="text/javascript" src="./cordova.js"></script>
+    <script type="text/javascript">
+    
+</body>
+</html>
